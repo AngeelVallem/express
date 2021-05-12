@@ -2,7 +2,6 @@ const express = require('express')
 const fs = require('fs')
 const app = express()
 const port = 8080
-let k;
 
 const newKoder = {
     "name" : "angel", 
@@ -20,21 +19,29 @@ app.use(express.json())
                 console.log(err)
             }else{
                res.json(JSON.parse(data))
-               k = (JSON.parse(data))
             }
         })
     })
 
     // Add new koder
 app.post('/koders', (req,res)=> {
-    k.koders.push(newKoder)
-    fs.writeFile('koders.json', JSON.stringify(k), (err)=> {
+    
+    fs.readFile('koders.json', 'utf8',(err, data)=> {
+        let json = JSON.parse(data)
         if(err){
-            console.log(err);
+            console.log('err', err);
         }else{
-            console.log('ok');
+           json.koders.push(newKoder) 
+           fs.writeFile('koders.json',JSON.stringify(json), err => {
+            if(err){
+                console.log(err);
+            }else{
+               console.log('ok');
+            }   
+        })
         }
     })
+  
     res.end()
 })
 
@@ -48,3 +55,6 @@ app.listen(port,() => {
 })
 
 
+
+
+/**/ 
