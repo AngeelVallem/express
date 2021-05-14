@@ -1,6 +1,11 @@
 {
   "koders": [
     {
+      "id": 1,
+      "name": "Beto",
+      "gender": "m"
+    },
+    {
       "id": 2,
       "name": "Walter",
       "gender": "m"
@@ -21,19 +26,36 @@
       "gender": "f"
     },
     {
-      "id": 6,
-      "name": "angel",
-      "gende": "m"
-    },
-    {
       "id": 7,
-      "name": "angel",
-      "gende": "m"
+      "name": "Taquito",
+      "gender": "f"
     },
     {
       "id": 8,
-      "name": "angel",
-      "gende": "m"
+      "name": "Javier",
+      "gender": "m"
+    }
+  ],
+  "mentores": [
+    {
+      "id": 1,
+      "name": "Oso",
+      "module": "hello"
+    },
+    {
+      "id": 2,
+      "name": "Melisa",
+      "module": "hello"
+    },
+    {
+      "id": 3,
+      "name": "Isra",
+      "module": "maquetado"
+    },
+    {
+      "id": 4,
+      "name": "Charles",
+      "module": "Back"
     }
   ]
 }
